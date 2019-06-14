@@ -21,7 +21,6 @@ def buildOutputList(events, windowSize):
     getLastMinute(events[len(events) - 1]['timestamp'], windowSize)
 
     # Build output list
-
     return None
 
 

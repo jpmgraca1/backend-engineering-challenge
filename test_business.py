@@ -1,13 +1,16 @@
+import unittest
+from datetime import datetime, timedelta
 from business import getFirstMinute, getLastMinute
 
 
 class TestBusiness(unittest.TestCase):
 
-    def testIsCorrectFormat(self):
+    def testgetFirstMinute(self):
         # Test the path and format of the file
-        self.assertTrue(isCorrectFormat("test_Files/test.json"))
-        self.assertFalse(isCorrectFormat("test_Files/hanSolo.json"))
+        self.assertAlmostEqual(getFirstMinute(
+            "2018-12-26 18:11:08.509654"), datetime.strptime("2018-12-26 18:11:00", '%Y-%m-%d %H:%M:%S'))
 
-    def testIsCorrectFormat(self):
+    def testgetLastMinute(self):
         # Test the path and format of the file
-        self.assertIsNotNone(getEvents("test_Files/test.json"))
+        self.assertAlmostEqual(getLastMinute(
+            "2018-12-26 18:11:08.509654", 6), datetime.strptime("2018-12-26 18:17:00", '%Y-%m-%d %H:%M:%S'))
