@@ -15,4 +15,4 @@ if inputFileName is None or windowSize is None:
 if not fileJedi.isCorrectFormat(inputFileName):
     sys.exit()
 
-business.CalculateAverageTimes(inputFileName, windowSize)
+business.calculateAverageTimes(inputFileName, windowSize)
