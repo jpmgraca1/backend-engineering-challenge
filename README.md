@@ -1,88 +1,55 @@
-# Bakckend Engineering Challenge
+# Python Script Usage
 
-
-Welcome to our Engineering Challenge repository 🖖
-
-If you found this repository it probably means that you are participating in our recruitment process. Thank you for your time and energy. If that's not the case please take a look at our [openings](https://unbabel.com/careers/ ) and apply!
-
-Please fork this repo before you start working on the challenge, read it careful and take your time and think about the solution. Also, please fork this repository because we will evaluate the code on the fork.
-
-This is an opportunity for us both to work together and get to know each other in a more technical way. If have some doubt please open and issue and we'll reach out to help.
-
-Good luck!
-
-## Challenge Scenario
-
-At Unbabel we deal with a lot of translation data. One of the metrics we use for our clients' SLAs is the delivery time of a translation. 
-
-In the context of this problem, and to keep things simple, our translation flow is going to be modeled as only one event.
-
-### *translation_delivered*
-
-Example:
+In the root folder, where the skywalker_cli.py module is included, please include the .json file to be analyzed by the application.
+The .json file must follow the convention presented in the challenge, like this:
 
 ```json
-{
-	"timestamp": "2018-12-26 18:12:19.903159",
-	"translation_id": "5aa5b2f39f7254a75aa4",
-	"source_language": "en",
-	"target_language": "fr",
-	"client_name": "easyjet",
-	"event_name": "translation_delivered",
-	"duration": 20,
-	"nr_words": 100
-}
+[
+    {
+        "timestamp": "2018-12-26 18:11:08.509654",
+        "translation_id": "5aa5b2f39f7254a75aa5",
+        "source_language": "en",
+        "target_language": "fr",
+        "client_name": "easyjet",
+        "event_name": "translation_delivered",
+        "nr_words": 30,
+        "duration": 20
+    },
+    {
+        "timestamp": "2018-12-26 18:23:19.903159",
+        "translation_id": "5aa5b2f39f7254a75bb33",
+        "source_language": "en",
+        "target_language": "fr",
+        "client_name": "booking",
+        "event_name": "translation_delivered",
+        "nr_words": 100,
+        "duration": 54
+	}
+]
 ```
+For another example, there is a file "test.json" inside the folder test_Files. Please, do not remove or modify this file in other to not break the unit tests.
 
-## Challenge Objective
+In order to run the script on MAC, on the terminal, inside the root directory of the project, please use:
+	python3 skywalker_cli.py <input_file.json> <window_size>
 
-Your mission is to build a simple command line application that parses a stream of events and produces an aggregated output. In this case, we're interested in calculating, for every minute, a moving average of the translation delivery time for the last X minutes.
+In order to run the script on Windows, on the terminal, inside the root directory of the project, please use: 
+	python skywalker_cli.py <input_file.json> <window_size>
 
-If we want to count, for each minute, the moving average delivery time of all translations for the past 10 minutes we would call your application like (feel free to name it anything you like!).
+Python must be installed in the machine that is trying to run the script.
 
-	unbabel_cli --input_file events.json --window_size 10
-	
-The input file format would be something like:
+An example call to the program: python skywalker_cli.py test_Files/test.json 10 
 
-	{"timestamp": "2018-12-26 18:11:08.509654","translation_id": "5aa5b2f39f7254a75aa5","source_language": "en","target_language": "fr","client_name": "easyjet","event_name": "translation_delivered","nr_words": 30, "duration": 20}
-	{"timestamp": "2018-12-26 18:15:19.903159","translation_id": "5aa5b2f39f7254a75aa4","source_language": "en","target_language": "fr","client_name": "easyjet","event_name": "translation_delivered","nr_words": 30, "duration": 31}
-	{"timestamp": "2018-12-26 18:23:19.903159","translation_id": "5aa5b2f39f7254a75bb33","source_language": "en","target_language": "fr","client_name": "booking","event_name": "translation_delivered","nr_words": 100, "duration": 54}
+The program generates a .json file, called "Results.json" with the answer that was asked for, presented in the root directory.
 
+## The getMinuteAverage function (business.py module)
 
-The output file would be something in the following format.
+This function represents the main algorithm, that loops through all the events presented in the json (ordered by date asc).
 
-```
-{"date": "2018-12-26 18:11:00", "average_delivery_time": 0}
-{"date": "2018-12-26 18:12:00", "average_delivery_time": 20}
-{"date": "2018-12-26 18:13:00", "average_delivery_time": 20}
-{"date": "2018-12-26 18:14:00", "average_delivery_time": 20}
-{"date": "2018-12-26 18:15:00", "average_delivery_time": 20}
-{"date": "2018-12-26 18:16:00", "average_delivery_time": 25.5}
-{"date": "2018-12-26 18:17:00", "average_delivery_time": 25.5}
-{"date": "2018-12-26 18:18:00", "average_delivery_time": 25.5}
-{"date": "2018-12-26 18:19:00", "average_delivery_time": 25.5}
-{"date": "2018-12-26 18:20:00", "average_delivery_time": 25.5}
-{"date": "2018-12-26 18:21:00", "average_delivery_time": 25.5}
-{"date": "2018-12-26 18:22:00", "average_delivery_time": 31}
-{"date": "2018-12-26 18:23:00", "average_delivery_time": 31}
-{"date": "2018-12-26 18:24:00", "average_delivery_time": 42.5}
-```
+In order to optimize the loop, the events that would no longer be counted for the minutes ahead to be presented (as their window of time already passed), are removed from the events list for the next iterations.
 
-#### Notes
-
-Before jumping right into implementation we advise you to think about the solution first. We will evaluate, not only if your solution works but also the following aspects:
-
-+ Simple and easy to read code. Remember that [simple is not easy](https://www.infoq.com/presentations/Simple-Made-Easy)
-+ Include a README.md that briefly describes how to build and run your code
-+ Be consistent in your code. 
-
-Feel free to, in your solution, include some your considerations while doing this challenge. We want you to solve this challenge in the language you feel most confortable with. Our machines run Python, Ruby, Scala, Java, Clojure, Elixir and Nodejs. If you are thinking of using any other programming language please reach out to us first 🙏.
-
-Also if you have any problem please **open an issue**. 
-
-Good luck and may the force be with you
+Also, there is a break in the for loop if the present event is later then the window of time.
 
 #### Extra points
 
-If you feeling creative feel free to consider any additional cases you might find interesting. Remember this is a bonus, focus on delivering the solution first.
+In the Results.json, you can also see, for each window of time, the average of the words translated (average_words_translated) and the average of words translated per second (average_words_per_second).
 

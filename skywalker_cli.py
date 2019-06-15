@@ -15,4 +15,8 @@ if inputFileName is None or windowSize is None:
 if not fileJedi.isCorrectFormat(inputFileName):
     sys.exit()
 
-business.calculateAverageTimes(inputFileName, windowSize)
+events = fileJedi.getEvents(inputFileName)
+
+outputList = business.calculateAverageTimes(events, windowSize)
+
+fileJedi.writeOutputFile(outputList, "Results.json")

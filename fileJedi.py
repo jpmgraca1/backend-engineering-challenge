@@ -19,3 +19,8 @@ def getEvents(fileName):
     data = path.read_text()
     jsonObject = json.loads(data)
     return jsonObject
+
+
+def writeOutputFile(outputList, outputPath):
+    data = json.dumps(outputList, indent=4, sort_keys=True, default=str)
+    Path(outputPath).write_text(data)

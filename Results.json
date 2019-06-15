@@ -1,0 +1,140 @@
+[
+    {
+        "average_delivery_time": 0.0,
+        "average_words_per_second": 0.0,
+        "average_words_translated": 0.0,
+        "date": "2018-12-26 18:11:00"
+    },
+    {
+        "average_delivery_time": 20.0,
+        "average_words_per_second": 1.5,
+        "average_words_translated": 30.0,
+        "date": "2018-12-26 18:12:00"
+    },
+    {
+        "average_delivery_time": 20.0,
+        "average_words_per_second": 1.5,
+        "average_words_translated": 30.0,
+        "date": "2018-12-26 18:13:00"
+    },
+    {
+        "average_delivery_time": 20.0,
+        "average_words_per_second": 1.5,
+        "average_words_translated": 30.0,
+        "date": "2018-12-26 18:14:00"
+    },
+    {
+        "average_delivery_time": 20.0,
+        "average_words_per_second": 1.5,
+        "average_words_translated": 30.0,
+        "date": "2018-12-26 18:15:00"
+    },
+    {
+        "average_delivery_time": 25.5,
+        "average_words_per_second": 1.1764705882352942,
+        "average_words_translated": 30.0,
+        "date": "2018-12-26 18:16:00"
+    },
+    {
+        "average_delivery_time": 25.5,
+        "average_words_per_second": 1.1764705882352942,
+        "average_words_translated": 30.0,
+        "date": "2018-12-26 18:17:00"
+    },
+    {
+        "average_delivery_time": 25.5,
+        "average_words_per_second": 1.1764705882352942,
+        "average_words_translated": 30.0,
+        "date": "2018-12-26 18:18:00"
+    },
+    {
+        "average_delivery_time": 25.5,
+        "average_words_per_second": 1.1764705882352942,
+        "average_words_translated": 30.0,
+        "date": "2018-12-26 18:19:00"
+    },
+    {
+        "average_delivery_time": 25.5,
+        "average_words_per_second": 1.1764705882352942,
+        "average_words_translated": 30.0,
+        "date": "2018-12-26 18:20:00"
+    },
+    {
+        "average_delivery_time": 25.5,
+        "average_words_per_second": 1.1764705882352942,
+        "average_words_translated": 30.0,
+        "date": "2018-12-26 18:21:00"
+    },
+    {
+        "average_delivery_time": 31.0,
+        "average_words_per_second": 0.967741935483871,
+        "average_words_translated": 30.0,
+        "date": "2018-12-26 18:22:00"
+    },
+    {
+        "average_delivery_time": 31.0,
+        "average_words_per_second": 0.967741935483871,
+        "average_words_translated": 30.0,
+        "date": "2018-12-26 18:23:00"
+    },
+    {
+        "average_delivery_time": 42.5,
+        "average_words_per_second": 1.5294117647058822,
+        "average_words_translated": 65.0,
+        "date": "2018-12-26 18:24:00"
+    },
+    {
+        "average_delivery_time": 42.5,
+        "average_words_per_second": 1.5294117647058822,
+        "average_words_translated": 65.0,
+        "date": "2018-12-26 18:25:00"
+    },
+    {
+        "average_delivery_time": 54.0,
+        "average_words_per_second": 1.8518518518518519,
+        "average_words_translated": 100.0,
+        "date": "2018-12-26 18:26:00"
+    },
+    {
+        "average_delivery_time": 54.0,
+        "average_words_per_second": 1.8518518518518519,
+        "average_words_translated": 100.0,
+        "date": "2018-12-26 18:27:00"
+    },
+    {
+        "average_delivery_time": 54.0,
+        "average_words_per_second": 1.8518518518518519,
+        "average_words_translated": 100.0,
+        "date": "2018-12-26 18:28:00"
+    },
+    {
+        "average_delivery_time": 54.0,
+        "average_words_per_second": 1.8518518518518519,
+        "average_words_translated": 100.0,
+        "date": "2018-12-26 18:29:00"
+    },
+    {
+        "average_delivery_time": 54.0,
+        "average_words_per_second": 1.8518518518518519,
+        "average_words_translated": 100.0,
+        "date": "2018-12-26 18:30:00"
+    },
+    {
+        "average_delivery_time": 54.0,
+        "average_words_per_second": 1.8518518518518519,
+        "average_words_translated": 100.0,
+        "date": "2018-12-26 18:31:00"
+    },
+    {
+        "average_delivery_time": 54.0,
+        "average_words_per_second": 1.8518518518518519,
+        "average_words_translated": 100.0,
+        "date": "2018-12-26 18:32:00"
+    },
+    {
+        "average_delivery_time": 54.0,
+        "average_words_per_second": 1.8518518518518519,
+        "average_words_translated": 100.0,
+        "date": "2018-12-26 18:33:00"
+    }
+]
