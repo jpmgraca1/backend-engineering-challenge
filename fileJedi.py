@@ -11,6 +11,9 @@ def isCorrectFormat(fileName):
             return True
         except ValueError:
             print("The json file provided is not on the correct format.")
+            return False
+
+    print("The json file provided does not exist.")
     return False
 
 
